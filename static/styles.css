@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap');
+
+body{
+  
+  background-image: url("../static/images/Community-5.png");
+  background-repeat: 60%;
+  background-size: cover;
+  background-color: #0a0c13;
+}
+
+
+/*
+orange: #F47226
+green: #318C6A
+dark-bg: #1C2135
+light-bg: #222A3F
+pinkish: #E3515E
+*/
+
+.navbar{
+  background-color: #121722;
+}
+
+.navbar-brand{
+  color: #D4D4D8;
+  border-bottom: 1px solid #E3515E;
+  font-family: 'Poppins', sans-serif;
+  font-size: x-large;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.navbar-brand:hover{
+  color: #D4D4D8;
+}
+
+.nav-link{
+  background-color: #121722;
+  border: none;
+  color: #D4D4D8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #121722;
+  transition: 0.3s;
+}
+
+.nav-link:hover{
+  color: #D4D4D8;
+  border-bottom: 1px solid #E3515E;
+}
+
+.nav-link:valid{
+  color: #D4D4D8;
+}
+
+
+.punchline{
+  text-align: center;
+  font-family: 'Noto Sans SC', sans-serif;
+  color: #D4D4D8;
+  font-size: 40px;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.reg-btn {
+  border: 2px solid #E3515E;
+  background-color: #0a0c13;
+  color: #D4D4D8;
+  padding: 14px 38px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.reg-btn:hover{
+  background-color: #E3515E;
+  color: #D4D4D8;
+}
+
+.register-btn{
+  text-align: center;
+  padding:20px;
+  margin-top: 30px;
+}
+
+.social-media{
+  margin-top: 30px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: #D4D4D8;
+  transition: 0.5s;
+}
+
+.fa:hover{
+  color: #E3515E;
+}
