@@ -1,0 +1,18 @@
+GOALS: 
+
+  Landing Page --> 26th May to 27th May
+  1. Login Page
+  2. Register and Punch Line Page
+  3. Combine The pages
+  4. JQuery/Javascript/BootStrap
+
+  Home Page --> 28th May to 29th May
+  1. Design Home Page 
+  2. Database ERD
+  3. Links and Additional pages
+  4. SQL Table - General Groups
+
+  Survey/Find Group/People Page --> 30th May to 31th May
+  1. Intrests Database
+  2. Cross Reference People and return list
+  3. Join General Study Groups
