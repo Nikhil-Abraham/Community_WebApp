@@ -4,8 +4,10 @@
 body{
   
   background-image: url("../static/images/Community-5.png");
-  background-repeat: 60%;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 70%;
   background-color: #0a0c13;
 }
 
@@ -103,4 +105,36 @@ pinkish: #E3515E
 
 .fa:hover{
   color: #E3515E;
+}
+
+#register_area-jq{
+  width: 30%;
+  background-color: #121722;
+}
+#login_area-jq{
+  width: 30%;
+  background-color: #121722;
+}
+
+
+.form-group{
+  margin-top: 20px;
+  font-size: medium;
+  text-align: left;
+  padding: 10px;
+}
+
+.register-btn-rp{
+  background-color: #121722;
+  border: 2px solid #E3515E;
+  color: #D4D4D8;
+  padding: 14px 38px;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.register-btn-rp:hover{
+  background-color: #E3515E;
+  color: #D4D4D8;
 }
