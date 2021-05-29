@@ -16,8 +16,3 @@ GOALS:
   1. Intrests Database
   2. Cross Reference People and return list
   3. Join General Study Groups
-
-
-PunchLine:
-  "Bringing People Together with Common Intrests
-    To Help Create A Better Tommorow"
