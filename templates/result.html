@@ -18,19 +18,16 @@
   
   <!-- Page content -->
   <div class="content">
-   {% for result in results %}
-     {% for list in result %}
-       {% for item in list %}
-        <div class="explore-area">
-          <!--<p>{{ key }}</p>-->
-          
-              <div class-"list-item">
-                {{ item }}
-              </div>
-          </div>
-          {% endfor %}
+    <div class="explore-area">
+      {% for result in results %}
+      <div class="list-block">
+        <div class="list-title">{{ result }}</div>
+        {% for item in results[result] %}
+          <div class="list-item">{{ item }}</div>      
+        {% endfor %}
+      </div>
       {% endfor %}
-   {% endfor %}
+    </div>
   </div>
 
 

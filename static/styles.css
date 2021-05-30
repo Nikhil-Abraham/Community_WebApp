@@ -259,3 +259,30 @@ div.content {
   background-color: #E3515E;
   color: #D4D4D8;
 }
+
+.content{
+  color: #D4D4D8;
+}
+
+.list-block{
+  background-color: #121722;
+  width: 100%;
+  padding:30px;
+  margin-bottom:20px;
+}
+
+.list-title{
+  font-size: larger;
+  width:100%;
+  text-align: center;
+  border-bottom: 1px solid #E3515E;
+}
+
+.list-item{
+  padding: 5px;
+  padding-left:30px;
+}
+
+.list-item:nth-of-type(odd){
+  background-color: #171e2c;
+}

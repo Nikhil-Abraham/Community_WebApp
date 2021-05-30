@@ -129,9 +129,13 @@ def result():
       rows = db.execute("SELECT email FROM users WHERE uid in (SELECT uid FROM user_topic WHERE tid=?)",tid)
       for row in rows:
         emails.add(row["email"])        
-      results[name["name"]] =  emails
       
-      print(result)
+      lists = []
+      for email in emails:
+        lists.append(email)
+      results[name["name"]] =  lists
+      
+      print(results)
     
     
     
