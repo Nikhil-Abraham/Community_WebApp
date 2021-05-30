@@ -219,3 +219,43 @@ pinkish: #E3515E
 .bottom:hover{
   border:1px solid #E3515E;
 }
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+.explore-area{
+  padding:50px;
+}
+.checkbox-list{
+  display: inline-block;
+  width:300px;
+  color: #D4D4D8;
+  background-color: #121722;
+  margin: 10px;
+  padding:10px;
+  padding-left:30px;
+}
+
+.checkbox-list > span {
+  padding-left:20px;
+}
+
+.explore-btn-container{
+  padding:40px;
+  text-align: center;
+}
+.explore-btn{
+  width:30%;
+  background-color: #121722;
+  border: 1px solid #E3515E;
+  color: #D4D4D8;
+  padding: 14px 28px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.explore-btn:hover{
+  background-color: #E3515E;
+  color: #D4D4D8;
+}

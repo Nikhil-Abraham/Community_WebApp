@@ -1,0 +1,37 @@
+{% extends "layout.html"%}
+
+{% block title %}
+  Explore
+{% endblock%}
+{% block body%}
+
+<!--NavBar Code-->
+  
+  <div class="sidebar">
+    <div class="menu">
+    <a class="navbar-brand-2" href="/">Community</a>
+    <a class="active" href="/explore">Explore</a>
+    <a href="#contact">Account</a>
+    <a href="/logout" class="bottom">Logout</a>
+    </div>
+  </div>
+  
+  <!-- Page content -->
+  <div class="content">
+   {% for result in results %}
+     {% for list in result %}
+       {% for item in list %}
+        <div class="explore-area">
+          <!--<p>{{ key }}</p>-->
+          
+              <div class-"list-item">
+                {{ item }}
+              </div>
+          </div>
+          {% endfor %}
+      {% endfor %}
+   {% endfor %}
+  </div>
+
+
+{% endblock %}

@@ -6,6 +6,8 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
+USER_LIST = set()
+
 
 app = Flask(__name__)
 
@@ -84,11 +86,53 @@ def intro():
     return render_template("intro.html")
     
 
-@app.route("/home", methods=["GET","POST"])
-def home():
-  return render_template("home.html")
 
 @app.route("/logout")
 def logout():
   session.clear()
+  USER_LIST.clear()
   return redirect("/intro")
+
+@app.route("/explore", methods=["GET","POST"])
+def explore():
+  if not session.get("user_id"):
+    return redirect("/intro")
+  if request.method == "POST":
+    rows = request.form.getlist("list")
+    for row in rows:
+      USER_LIST.add(row)
+    print(USER_LIST)
+    
+    for tid in USER_LIST:
+      print(session['user_id'],tid)
+      
+      db.execute("INSERT INTO user_topic(uid,tid) VALUES(?,?)",session["user_id"],tid)
+    
+    return redirect("/result")
+  else:
+    rows = db.execute("SELECT * FROM topics")
+    return render_template("explore.html",rows=rows)
+  
+@app.route("/result")
+def result():
+  
+  results = {}
+  if not session.get("user_id"):
+    return redirect("/intro")
+  print("entered result block")
+  emails = set()
+  topics = []
+  for tid in USER_LIST:
+    names = db.execute("SELECT name FROM topics WHERE tid=?",tid)
+    for name in names:
+      topics.append(name["name"])
+      rows = db.execute("SELECT email FROM users WHERE uid in (SELECT uid FROM user_topic WHERE tid=?)",tid)
+      for row in rows:
+        emails.add(row["email"])        
+      results[name["name"]] =  emails
+      
+      print(result)
+    
+    
+    
+  return render_template("result.html", results = results)
