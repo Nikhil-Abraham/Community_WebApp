@@ -55,7 +55,7 @@ def intro():
         )
       rows = db.execute("SELECT * FROM users WHERE email=?",username)
       if len(rows)==1:
-        return render_template("error.html",message="User Already Registered!")
+        return render_template("error.html",message="User Already Registered!",Code=403)
       
       return_id = db.execute("INSERT INTO users(email,hash) VALUES(?,?)",username,hash)
       
@@ -75,7 +75,7 @@ def intro():
       rows = db.execute("SELECT * FROM users WHERE email = ?",username)
       
       if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
-        return render_template("error.html",message="Incorect Password !")
+        return render_template("error.html",message="Incorect Password !",Code=403)
       else:
         session["user_id"] = rows[0]["uid"]
         return redirect("/")
@@ -87,3 +87,8 @@ def intro():
 @app.route("/home", methods=["GET","POST"])
 def home():
   return render_template("home.html")
+
+@app.route("/logout")
+def logout():
+  session.clear()
+  return redirect("/intro")

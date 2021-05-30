@@ -138,3 +138,84 @@ pinkish: #E3515E
   background-color: #E3515E;
   color: #D4D4D8;
 }
+
+.error_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.error_area{
+  margin-top: 170px;
+  background-color: #121722;
+  width: 30%;
+  font-size:30px;
+  color: #D4D4D8;
+  text-align: center;
+  padding:30px;
+}
+
+/*Side Bar for Home Page */
+
+.sidebar {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 220px;
+  overflow: visible;
+  z-index: 10;
+  background-color: #121722;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.menu a {
+  display: block;
+  color: #D4D4D8;
+  padding: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.menu a.active {
+  border-right: 2px solid #E3515E;
+}
+
+.menu a:hover:not(.active) {
+  border-left: 1px solid #E3515E;
+  color: white;
+}
+
+
+.menu>a:not(.bottom)+.bottom {
+  margin-top: auto;
+}
+
+.navbar-brand-2{
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bottom{
+  margin-top: auto;
+  text-align: center;
+  transition: 0.4s;
+}
+.bottom:hover{
+  border:1px solid #E3515E;
+}
