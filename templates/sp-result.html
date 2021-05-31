@@ -18,16 +18,14 @@
   <!-- Page content -->
   <div class="content">
     <div class="explore-area">
-      <form action = "/explore" method="post" name="explore-list">
-      {% for row in rows %}
-        <div  class="checkbox-list">
-          <input name="list" type="checkbox" value="{{row['tid']}}"><span>{{ row['name'] }}</span>
-        </div>
-      {% endfor %}
-      <div class="explore-btn-container">
-        <input type="submit" value="Find Community" class="explore-btn">
+      
+      <div class="list-block">
+        <div class="list-title">{{ key }}</div>
+        {% for row in rows %}
+          <div class="list-item">{{ row["email"] }}</div>      
+        {% endfor %}
       </div>
-    </form>
+
     </div>
   </div>
 

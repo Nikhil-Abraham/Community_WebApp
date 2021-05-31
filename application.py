@@ -39,9 +39,12 @@ db = SQL("sqlite:///community.db")
 def index():
   if not session.get("user_id"):
     return redirect("/intro")
-    
   else:
-    return render_template("index.html")
+    
+    rows = db.execute("SELECT name FROM topics")
+    
+    
+    return render_template("index.html", rows=rows)
 
 @app.route("/intro", methods=["GET","POST"])
 def intro():
@@ -85,6 +88,23 @@ def intro():
   else:
     return render_template("intro.html")
     
+    
+@app.route("/sp-result")
+def sp_result():
+  if not session.get("user_id"):
+    return redirect("/intro")
+  key = request.args.get('key')
+  if key == 'C  ':
+    key='C++'
+  elif key == 'C ':
+    key='C#'
+  
+  tid = db.execute("SELECT tid from topics WHERE topics.name=?",key)[0]["tid"]
+  
+  rows = db.execute("SELECT email from users WHERE uid in(SELECT uid from user_topic where tid=?)",tid)
+  
+  
+  return render_template("sp-result.html",rows=rows,key=key)
 
 
 @app.route("/logout")
@@ -140,3 +160,5 @@ def result():
     
     
   return render_template("result.html", results = results)
+  
+

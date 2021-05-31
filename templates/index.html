@@ -10,15 +10,22 @@
   <div class="sidebar">
     <div class="menu">
     <a class="active navbar-brand-2" href="/">Community</a>
-    <a href="/explore">Intrests</a>
-    <a href="#contact">Account</a>
+    <a href="/explore">Explore</a>
     <a href="/logout" class="bottom">Logout</a>
     </div>
   </div>
   
   <!-- Page content -->
   <div class="content">
-    ..
+    <div class="home-block">
+      {% for row in rows  %}
+      <a href="/sp-result?key={{ row["name"] }}">
+      <div class="block-item">
+        {{ row["name"] }}
+      </div>
+      </a>  
+      {% endfor %}
+    </div>
   </div>
 
 

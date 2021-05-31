@@ -286,3 +286,20 @@ div.content {
 .list-item:nth-of-type(odd){
   background-color: #171e2c;
 }
+
+.home-block{
+  width: 100%;
+  padding: 90px;
+}
+
+.block-item{
+  padding:10px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  background-color: #121722;
+}
+
+.home-block > a{
+  color: #D4D4D8;
+  text-decoration: none;
+}
